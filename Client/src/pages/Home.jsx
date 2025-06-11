@@ -1,5 +1,12 @@
 import React from "react";
+import { Banner } from "../components/Home/Banner/Banner";
+import FavouriteBooks from "../components/Home/FavouriteBooks";
 
 export default function Home() {
-  return <div>This is the home page</div>;
+    return (
+        <div>
+            <Banner />
+            <FavouriteBooks />
+        </div>
+    );
 }
