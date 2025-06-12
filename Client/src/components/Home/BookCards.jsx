@@ -43,10 +43,10 @@ export const BookCards = ({ books, headline }) => {
                 >
                     {books.map((book) => (
                         <SwiperSlide key={book._id}>
-                            <Link to="/">
+                            <Link to={`/book/${book._id}`}>
                                 <div className="relative">
                                     <img src={book.imageURL} alt="books" />
-                                    <div className="absolute top-3 right-3 bg-blue-600 hover:bg-black p-2 rounded">
+                                    <div className="absolute top-3 right-3 bg-blue-600 hover:bg-white p-2 rounded">
                                         <FaCartShopping />
                                     </div>
                                 </div>
