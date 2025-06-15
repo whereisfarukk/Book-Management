@@ -6,3 +6,7 @@
 *::after {
     box-sizing: border-box;
 }
+.dark {
+    background-color: white !important;
+    color: black !important;
+}
