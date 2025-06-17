@@ -8,6 +8,10 @@ import { UploadBook } from "../components/Admin-dashboard/UploadBook";
 import { ManageBooks } from "../components/Admin-dashboard/ManageBooks";
 import { EditBooks } from "../components/Admin-dashboard/EditBooks";
 import { Dashboard } from "../components/Admin-dashboard/Dashboard";
+import { SignUp } from "../pages/SignUp";
+import { Login } from "../pages/Login";
+import { PrivateRoutes } from "./guards/PrivateRoutes";
+import { Logout } from "../pages/Logout";
 
 const router = createBrowserRouter([
     {
@@ -33,7 +37,11 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: "/admin/dashboard",
-                        element: <Dashboard />,
+                        element: (
+                            <PrivateRoutes>
+                                <Dashboard />
+                            </PrivateRoutes>
+                        ),
                     },
                     {
                         path: "/admin/dashboard/upload",
@@ -49,6 +57,18 @@ const router = createBrowserRouter([
                         loader: ({ params }) => fetch(`http://localhost:3000/book/${params.id}`),
                     },
                 ],
+            },
+            {
+                path: "/sign-up",
+                element: <SignUp />,
+            },
+            {
+                path: "/login",
+                element: <Login />,
+            },
+            {
+                path: "/log-out",
+                element: <Logout />,
             },
         ],
     },
