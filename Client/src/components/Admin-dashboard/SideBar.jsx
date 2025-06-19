@@ -24,9 +24,7 @@ export const SideBar = () => {
                         <SidebarItem href="#" icon={HiShoppingBag}>
                             Products
                         </SidebarItem>
-                        <SidebarItem href="/login" icon={HiArrowSmRight}>
-                            Sign In
-                        </SidebarItem>
+
                         <SidebarItem href="/logout" icon={HiTable}>
                             Log Out
                         </SidebarItem>

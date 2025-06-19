@@ -11,7 +11,6 @@ export const ManageBooks = () => {
     });
     // delete a book
     const handleDelete = (id) => {
-        console.log(id);
         fetch(`http://localhost:3000/book/${id}`, { method: "DELETE" })
             .then((res) => res.json())
             .then((data) => {

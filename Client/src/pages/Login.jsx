@@ -4,12 +4,12 @@ import { AuthContext } from "../contexts/AuthProvider";
 
 export const Login = () => {
     const { login, loginWithGoogle } = useContext(AuthContext);
-    const [error, setError] = useState("error");
+    const [error, setError] = useState("");
 
     const location = useLocation();
     const navigate = useNavigate();
 
-    // here location.state?.from?.pathname this line means from which page to which page i want to visit.lets say i want to visit place a to b. If i need authorization to visit b, from a i will be redirected to /login page.And in the logn page i can know where i actually wanted to visit(which is place b). And this wanted place can be know via location.state?.from?.pathname and theres no place i wanted to visit(not b) then after login i will be redirected to place "/"
+    // here "location.state?.from?.pathname" this line means from which page to which page i want to visit.lets say i want to visit place a to b. If i need authorization to visit b, from a i will be redirected to /login page.And in the logn page i can know where i actually wanted to visit(which is place b). And this wanted place can be know via location.state?.from?.pathname and theres no place i wanted to visit(not b) then after login i will be redirected to place "/"
     const from = location.state?.from?.pathname || "/";
 
     const handleLogin = (e) => {
@@ -17,7 +17,6 @@ export const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
         login(email, password)
             .then((userCredential) => {
                 // Signed in
@@ -29,6 +28,7 @@ export const Login = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setError(errorMessage);
             });
     };
     // sign up using google
@@ -94,7 +94,7 @@ export const Login = () => {
                                 />
                             </div>
                         </div>
-
+                        {error ? <p className="text-red-700 font-semibold">Email or Password is not correct</p> : ""}
                         <div>
                             <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                 Sign in

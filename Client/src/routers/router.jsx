@@ -12,6 +12,7 @@ import { SignUp } from "../pages/SignUp";
 import { Login } from "../pages/Login";
 import { PrivateRoutes } from "./guards/PrivateRoutes";
 import { Logout } from "../pages/Logout";
+import { About } from "../pages/About";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: "/shop",
                 element: <Shop />,
+            },
+            {
+                path: "/about",
+                element: <About />,
             },
             {
                 path: "/book/:id",
@@ -67,7 +72,7 @@ const router = createBrowserRouter([
                 element: <Login />,
             },
             {
-                path: "/log-out",
+                path: "/logout",
                 element: <Logout />,
             },
         ],

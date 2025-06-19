@@ -8,7 +8,6 @@ export default function Navbar() {
     const [isSticky, setIsSticky] = useState(false);
 
     const { user } = useContext(AuthContext);
-    console.log(user);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);

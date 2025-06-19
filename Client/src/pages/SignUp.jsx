@@ -8,9 +8,7 @@ export const SignUp = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    console.log(location.state);
     const from = location.state?.from?.pathname || "/";
-    // console.log(from);
 
     const handleSignUp = (e) => {
         e.preventDefault();
