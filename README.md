@@ -41,12 +41,9 @@ Book-Management/
 │   │   └── ...
 │   ├── src/
 │   │   ├── assets/
-│   │   │   ├── AddBook.js
-│   │   │   ├── BookList.js
-│   │   │   ├── EditBook.js
-│   │   │   ├── Login.js
-│   │   │   ├── Navbar.js
-│   │   │   └── Register.js
+│   │   │   ├── banner-books
+│   │   │   ├── profilePic.jpg
+│   │   │   └── ...
 │   │   ├── components/
 │   │   │   ├── Admin-dashboard
 │   │   │   │   ├── Dashboard.jsx
